@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 const Fixed = require("../models/fixed.models")
 
-app.post("/fixed", async (req, res) => {
+app.post("/", async (req, res) => {
     try {
         let account = await Fixed.create(req.body)
         res.send(account)
@@ -12,3 +12,6 @@ app.post("/fixed", async (req, res) => {
         res.send(err.message)
     }
 })
+
+
+module.exports = app

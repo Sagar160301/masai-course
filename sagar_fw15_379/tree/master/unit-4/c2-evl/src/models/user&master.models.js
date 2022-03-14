@@ -1,6 +1,6 @@
 
 
-const mongoose = required('mongoose')
+const mongoose = require('mongoose')
 
 const userMasterSchema = new mongoose.Schema({
     userId: {

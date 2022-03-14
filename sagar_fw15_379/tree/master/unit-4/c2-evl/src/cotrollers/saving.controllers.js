@@ -7,7 +7,7 @@ const app = express()
 const Saving = require('../models/saving.models')
 
 
-app.post("/saving", async (req, res) => {
+app.post("/", async (req, res) => {
     try {
         let account = await Saving.create(req.body)
         res.send(account)
@@ -16,3 +16,5 @@ app.post("/saving", async (req, res) => {
         res.send(err.message)
     }
 })
+
+module.exports = app
