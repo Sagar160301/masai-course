@@ -13,5 +13,16 @@ app.post("/", async (req, res) => {
     }
 })
 
+app.delete("/:id", async (req, res) => {
+    try {
+        let account = await Fixed.findByIdAndDelete(req.params.id)
+        account.balance = ((acc.balance) * 2 / 1000)
+        res.send(account)
+    }
+    catch (err) {
+        res.send(err.message)
+    }
+})
+
 
 module.exports = app
