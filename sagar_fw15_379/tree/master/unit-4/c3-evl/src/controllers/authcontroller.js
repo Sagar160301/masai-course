@@ -22,7 +22,7 @@ const verifyPassword = (user, password) => {
 
 const register = async (req, res) => {
   try {
-    let user = await User.find({ email: req.body.email });
+    let user = await User.findOne({ email: req.body.email });
     if (user) {
       res.send("email already exist");
     }
@@ -36,7 +36,7 @@ const register = async (req, res) => {
 
 const login = async (req, res) => {
   try {
-    const user = await User.find({ email: req.body.email });
+    const user = await User.findOne({ email: req.body.email });
     if (!user) {
       res.send("incorrect email and password");
     }

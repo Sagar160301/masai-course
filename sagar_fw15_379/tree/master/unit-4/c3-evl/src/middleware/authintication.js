@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt");
-const { verify } = require("jsonwebtoken");
-var jwt = require("jsonwebtoken");
+// const { verify } = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 const verifyToken = (token) => {
