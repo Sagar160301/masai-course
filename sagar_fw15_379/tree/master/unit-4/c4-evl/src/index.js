@@ -8,6 +8,6 @@ app.use(express.json());
 
 app.post("/register", register);
 app.post("/login", login);
-app.use("todo", todoController);
+app.use("/todo", todoController);
 
 module.exports = app;
